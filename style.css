@@ -379,3 +379,86 @@ td a:hover {
   color: #6c757d;
   line-height: 1.4;
 }
+
+/* === STYLE UNTUK HALAMAN INFORMASI (bab1.php) === */
+
+.info-content {
+  padding: 20px 0;
+}
+
+.info-section {
+  margin-bottom: 30px;
+}
+
+.info-section h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary-light);
+  display: inline-block;
+}
+
+.info-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.info-section ul {
+  list-style-type: none; /* Menghilangkan bullets default */
+  padding-left: 0;
+}
+
+.info-section ul li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  padding-left: 35px;
+  position: relative;
+}
+
+/* Membuat bullet custom yang lebih menarik */
+.info-section ul li::before {
+  content: "✔"; /* Ikon centang */
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.info-divider {
+  margin: 40px auto;
+  border-color: #e0e0e0;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.location-card {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 5px solid var(--primary-color);
+}
+
+.location-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.location-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.info-content .cta-button {
+  margin-top: 30px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
