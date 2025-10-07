@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab I: Pengantar EPSS - BPS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Logo_Badan_Pusat_Statistik_%28BPS%29_Indonesia.svg/2048px-Logo_Badan_Pusat_Statistik_%28BPS%29_Indonesia.svg.png" alt="Logo BPS">
+            </div>
+            <div class="brand-text">
+                <h1>Badan Pusat Statistik</h1>
+                <h2>Republik Indonesia</h2>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-title">
+            <h2>BAB I: Pengantar Evaluasi Penyelenggaraan Statistik Sektoral (EPSS)</h2>
+        </div>
+
+        <div class="info-content">
+            <div class="info-section">
+                <h3>APA ITU EPSS?</h3>
+                <p>
+                    Evaluasi Penyelenggaraan Statistik Sektoral (EPSS) adalah suatu proses
+                    penilaian secara sistematis melalui verifikasi dan validasi informasi
+                    terhadap hasil penilaian mandiri untuk mengukur tingkat kematangan
+                    penyelenggaraan statistik sektoral.
+                </p>
+            </div>
+
+            <hr class="info-divider">
+
+            <div class="info-section">
+                <h3>MENGAPA EPSS DILAKUKAN?</h3>
+                <ul>
+                    <li>Mengukur capaian kemajuan penyelenggaraan statistik sektoral pada Instansi Pusat dan Pemerintahan Daerah.</li>
+                    <li>Meningkatkan kualitas penyelenggaraan statistik sektoral pada Instansi Pusat dan Pemerintahan Daerah.</li>
+                    <li>Meningkatkan kualitas pelayanan publik di bidang statistik pada Instansi Pusat dan Pemerintahan Daerah.</li>
+                </ul>
+            </div>
+
+            <hr class="info-divider">
+
+            <div class="info-section">
+                <h3>DIMANA EPSS DILAKSANAKAN?</h3>
+                <div class="location-grid">
+                    <div class="location-card">
+                        <h4>Instansi Pusat</h4>
+                        <p>Kementerian, lembaga pemerintah nonkementerian, kesekretariatan negara, kesekretariatan lembaga non struktural, dan lembaga pemerintah lainnya.</p>
+                    </div>
+                    <div class="location-card">
+                        <h4>Pemerintahan Daerah</h4>
+                        <p>Provinsi, Kabupaten, Kota.</p>
+                    </div>
+                </div>
+            </div>
+             <!-- <a href="form-input.php" class="cta-button">Lanjut Isi Form Bab I</a> -->
+        </div>
+        </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Badan Pusat Statistik. Hak Cipta Dilindungi.</p>
+    </footer>
+
+</body>
+</html>

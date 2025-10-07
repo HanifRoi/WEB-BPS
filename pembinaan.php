@@ -28,7 +28,7 @@
 
         <div class="chapter-selection-container">
             
-            <a href="form-input.php" class="chapter-card">
+            <a href="bab1.php" class="chapter-card">
                 <h3>BAB I</h3>
             </a>
 
