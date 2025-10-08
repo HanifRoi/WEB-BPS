@@ -462,3 +462,156 @@ td a:hover {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* === STYLE UNTUK HALAMAN SIMULASI (simulasi.php) === */
+
+.simulation-selection-container {
+  display: flex;
+  flex-direction: row; /* Membuat layout menjadi horizontal (kesamping) */
+  justify-content: center; /* Menengahkan kartu-kartu */
+  gap: 30px; /* Jarak antar kartu */
+  flex-wrap: wrap; /* Agar turun ke bawah di layar kecil */
+}
+
+.simulation-card {
+  background: var(--white-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 300px; /* Atur lebar maksimum kartu */
+}
+
+.simulation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary-color);
+}
+
+.simulation-card .icon-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 auto 20px auto;
+}
+
+.simulation-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.simulation-card p {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+/* === STYLE UNTUK DASHBOARD (prinsip_sdi.php) === */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Agar rapi di layar kecil */
+}
+
+.dashboard-description h2 {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.dashboard-description p {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  border: 2px solid var(--primary-color);
+}
+
+.action-button:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
+}
+
+.action-button.secondary {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+}
+
+.action-button.secondary:hover {
+  background-color: #f8f9fa;
+}
+
+.form-section,
+.table-section {
+  padding-top: 20px;
+}
+
+.form-section h3,
+.table-section h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+/* === STYLE UNTUK SEARCH BAR DAN HEADER TABEL === */
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.table-header h3 {
+  margin: 0;
+  text-align: left; /* Kembalikan ke rata kiri */
+}
+
+.search-container {
+  min-width: 300px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.2);
+}

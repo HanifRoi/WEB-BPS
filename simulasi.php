@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Datang - Badan Pusat Statistik</title>
+    <title>Pilih Domain Simulasi - BPS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,20 +19,29 @@
             </div>
         </div>
     </header>
+
     <div class="container">
-        <div class="hero-section">
-            <h2>Selamat Datang di Portal Evaluasi Penyelenggaraan Statistik Sektoral (EPSS)</h2>
-            <p>
-                Portal ini digunakan untuk melakukan input dan rekapitulasi data Lembar Kerja Evaluasi (LKE)
-                sebagai bagian dari proses penilaian Indeks Pembangunan Statistik (IPS).
-            </p>
+        <div class="page-title">
+            <h2>Simulasi Penilaian EPSS</h2>
+            <p>Pilih domain yang ingin Anda simulasikan penilaiannya.</p>
+        </div>
+
+        <div class="simulation-selection-container">
             
-            <div class="button-container">
-                <a href="pembinaan.php" class="cta-button">Pembinaan</a>
-                <a href="simulasi.php" class="cta-button secondary">Simulasi</a>
-            </div>
-            </div>
-    </div>
+            <a href="prinsip_sdi.php" class="simulation-card">
+                <div class="icon-placeholder">SDI</div>
+                <h3>Prinsip SDI</h3>
+                <p>Simulasi penilaian untuk domain Prinsip Satu Data Indonesia.</p>
+            </a>
+
+            <a href="#" class="simulation-card">
+                <div class="icon-placeholder">QD</div>
+                <h3>Kualitas Data</h3>
+                <p>Simulasi penilaian untuk domain Kualitas Data.</p>
+            </a>
+            
+        </div>
+        </div>
 
     <footer class="footer">
         <p>&copy; 2024 Badan Pusat Statistik. Hak Cipta Dilindungi.</p>
