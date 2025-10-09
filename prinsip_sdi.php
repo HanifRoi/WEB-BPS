@@ -79,14 +79,6 @@ include 'koneksi.php';
                     <label for="file_evidence">Unggah File Evidence (PDF, JPG, PNG, DOCX)</label>
                     <input type="file" id="file_evidence" name="file_evidence">
                 </div>
-                <div class="form-group">
-                    <label for="jawaban_supervisor">Jawaban Supervisor (Pilih 1-5)</label>
-                    <input type="number" id="jawaban_supervisor" name="jawaban_supervisor" min="1" max="5">
-                </div>
-                <div class="form-group">
-                    <label for="catatan_supervisor">Catatan Supervisor</label>
-                    <textarea id="catatan_supervisor" name="catatan_supervisor" rows="3"></textarea>
-                </div>
                 <button type="submit">Simpan & Unggah</button>
             </form>
         </div>
@@ -97,7 +89,7 @@ include 'koneksi.php';
                 <div class="search-container">
                     <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Cari berdasarkan Indikator...">
                 </div>
-                </div>
+            </div>
              <div class="table-wrapper">
                 <table id="dataTable">
                     <thead>
@@ -106,7 +98,6 @@ include 'koneksi.php';
                             <th>Indikator</th>
                             <th>Penjelasan Indikator</th>
                             <th>Jawaban Op.</th>
-                            <th>Jawaban Spv.</th>
                             <th>Bukti File</th>
                         </tr>
                     </thead>
@@ -123,7 +114,7 @@ include 'koneksi.php';
                                 echo "<td>" . htmlspecialchars($data['indikator']) . "</td>";
                                 echo "<td>" . nl2br(htmlspecialchars($data['penjelasan_indikator'])) . "</td>";
                                 echo "<td>" . htmlspecialchars($data['jawaban_operator']) . "</td>";
-                                echo "<td>" . htmlspecialchars($data['jawaban_supervisor']) . "</td>";
+                                // echo "<td>" . htmlspecialchars($data['jawaban_supervisor']) . "</td>";
                                 if (!empty($data['file_evidence'])) {
                                     echo "<td><a href='uploads/" . htmlspecialchars($data['file_evidence']) . "' target='_blank'>Lihat File</a></td>";
                                 } else {
@@ -132,7 +123,7 @@ include 'koneksi.php';
                                 echo "</tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='6'>Belum ada data yang tersimpan.</td></tr>";
+                            echo "<tr><td colspan='5'>Belum ada data yang tersimpan.</td></tr>";
                         }
                         ?>
                     </tbody>
@@ -153,25 +144,22 @@ include 'koneksi.php';
             if (formSection.style.display === "none") {
                 formSection.style.display = "block";
                 button.textContent = "Tutup Form";
-                button.classList.add("secondary"); // Ubah gaya tombol saat form terbuka
+                button.classList.add("secondary");
             } else {
                 formSection.style.display = "none";
                 button.textContent = "Input Data Baru";
-                button.classList.remove("secondary"); // Kembalikan gaya tombol
+                button.classList.remove("secondary");
             }
         }
 
         function searchTable() {
-            // Deklarasi variabel
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
             table = document.getElementById("dataTable");
             tr = table.getElementsByTagName("tr");
 
-            // Loop melalui semua baris tabel, dan sembunyikan yang tidak cocok
-            for (i = 1; i < tr.length; i++) { // Mulai dari 1 untuk skip header
-                // Cari di kolom "Indikator" (kolom ke-2, index 1)
+            for (i = 1; i < tr.length; i++) {
                 td = tr[i].getElementsByTagName("td")[1];
                 if (td) {
                     txtValue = td.textContent || td.innerText;
@@ -184,5 +172,6 @@ include 'koneksi.php';
             }
         }
     </script>
-    </body>
+
+</body>
 </html>
