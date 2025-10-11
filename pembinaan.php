@@ -21,6 +21,9 @@
     </header>
 
     <div class="container">
+    <div class="back-button-container">
+        <a href="index.php" class="back-button">&larr; Kembali ke Halaman Utama</a>
+    </div>
         <div class="page-title">
             <h2>Pilih Bab Penilaian EPSS</h2>
             <p>Silakan pilih bab yang ingin Anda isi atau evaluasi.</p>
@@ -38,14 +41,21 @@
 
             <a href="form-input.php" class="chapter-card">
                 <h3>BAB III</h3>
-                
+            </a>
+
+            <a href="form-input.php" class="chapter-card">
+                <h3>BAB IV</h3>
+            </a>
+
+            <a href="form-input.php" class="chapter-card">
+                <h3>BAB V</h3>
             </a>
             
         </div>
         </div>
 
     <footer class="footer">
-        <p>&copy; 2024 Badan Pusat Statistik. Hak Cipta Dilindungi.</p>
+        <p>&copy; 2025 Badan Pusat Statistik. Hak Cipta Dilindungi.</p>
     </footer>
 
 </body>

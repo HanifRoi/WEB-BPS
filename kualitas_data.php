@@ -6,7 +6,7 @@ include 'koneksi.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Prinsip SDI - BPS</title>
+    <title>Dashboard Kualitas Data - BPS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,13 +24,16 @@ include 'koneksi.php';
     </header>
 
     <div class="container">
+    <div class="back-button-container">
+        <a href="simulasi.php" class="back-button">&larr; Kembali ke Pilihan Domain</a>
+    </div>
         <div class="dashboard-header">
             <div class="dashboard-description">
-                <h2>Prinsip Satu Data Indonesia (SDI)</h2>
+                <h2>Kualitas Data</h2>
                 <p>Halaman ini berisi data terkait domain Prinsip SDI. Anda dapat menambahkan data baru atau mencari data yang sudah ada di dalam sistem.</p>
             </div>
             <div class="dashboard-actions">
-                <a href="form_sdi.php" class="action-button">Input Data Baru</a>
+                <a href="form_kualitas.php" class="action-button">Input Data Baru</a>
             </div>
         </div>
 
@@ -69,7 +72,8 @@ include 'koneksi.php';
                     <tbody>
                         <?php
                         // Mengambil semua kolom dengan '*'
-                        $sql = "SELECT * FROM rekap_lke WHERE domain = 'Prinsip SDI' ORDER BY id DESC";
+                       // Ganti query ini
+$sql = "SELECT * FROM rekap_lke WHERE domain = 'Kualitas Data' ORDER BY id DESC";
                         $result = mysqli_query($koneksi, $sql);
                         $nomor = 1;
 

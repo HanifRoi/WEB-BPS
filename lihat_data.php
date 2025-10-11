@@ -1,4 +1,5 @@
 <?php
+// Selalu sertakan file koneksi di awal
 include 'koneksi.php';
 ?>
 <!DOCTYPE html>
@@ -6,7 +7,7 @@ include 'koneksi.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Prinsip SDI - BPS</title>
+    <title>Lihat Data Tersimpan - BPS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,30 +25,9 @@ include 'koneksi.php';
     </header>
 
     <div class="container">
-        <div class="dashboard-header">
-            <div class="dashboard-description">
-                <h2>Prinsip Satu Data Indonesia (SDI)</h2>
-                <p>Halaman ini berisi data terkait domain Prinsip SDI. Anda dapat menambahkan data baru atau mencari data yang sudah ada di dalam sistem.</p>
-            </div>
-            <div class="dashboard-actions">
-                <a href="form_sdi.php" class="action-button">Input Data Baru</a>
-            </div>
-        </div>
-
-        <hr>
-        
-        <?php if(isset($_GET['status'])): ?>
-            <?php if($_GET['status'] == 'sukses'): ?>
-                <p class="pesan-sukses">Data baru berhasil disimpan!</p>
-            <?php elseif($_GET['status'] == 'update_sukses'): ?>
-                <p class="pesan-sukses">Data berhasil diupdate!</p>
-            <?php endif; ?>
-        <?php endif; ?>
-
-
         <div id="tabel-data" class="table-section">
             <div class="table-header">
-                <h3>Data Tersimpan</h3>
+                <h3>Data LKE Tersimpan</h3>
                 <div class="search-container">
                     <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Cari berdasarkan Instansi atau Indikator...">
                 </div>
@@ -59,17 +39,14 @@ include 'koneksi.php';
                             <th>No</th>
                             <th>Instansi</th>
                             <th>Indikator</th>
-                            <th>Bobot</th>
-                            <th>Tingkat Kematangan</th>
                             <th>Jawaban Operator</th>
-                            <th>Link Bukti</th> <th>File Bukti</th>
-                            <th>Aksi</th>
+                            <th>Bukti File</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        // Mengambil semua kolom dengan '*'
-                        $sql = "SELECT * FROM rekap_lke WHERE domain = 'Prinsip SDI' ORDER BY id DESC";
+                        // Query untuk mengambil data yang relevan
+                        $sql = "SELECT id, instansi, indikator, jawaban_operator, file_evidence FROM rekap_lke ORDER BY id DESC";
                         $result = mysqli_query($koneksi, $sql);
                         $nomor = 1;
 
@@ -79,33 +56,16 @@ include 'koneksi.php';
                                 echo "<td>" . $nomor++ . "</td>";
                                 echo "<td>" . htmlspecialchars($data['instansi']) . "</td>";
                                 echo "<td>" . htmlspecialchars($data['indikator']) . "</td>";
-                                echo "<td>" . htmlspecialchars($data['bobot']) . "</td>";
-                                echo "<td>" . nl2br(htmlspecialchars($data['pilihan_kematangan'])) . "</td>";
                                 echo "<td>" . htmlspecialchars($data['jawaban_operator']) . "</td>";
-
-                                // ====== MENAMPILKAN LINK EVIDENCE ======
-                                if (!empty($data['link_evidence'])) {
-                                    echo "<td><a href='" . htmlspecialchars($data['link_evidence']) . "' target='_blank'>Lihat Link</a></td>";
-                                } else {
-                                    echo "<td>-</td>";
-                                }
-
-                                // Menampilkan File Evidence
                                 if (!empty($data['file_evidence'])) {
                                     echo "<td><a href='uploads/" . htmlspecialchars($data['file_evidence']) . "' target='_blank'>Lihat File</a></td>";
                                 } else {
                                     echo "<td>-</td>";
                                 }
-                                
-                                // Tombol Aksi
-                                echo "<td>";
-                                echo "<a href='edit_data.php?id=" . $data['id'] . "' class='action-button edit'>Edit</a>";
-                                echo "</td>";
                                 echo "</tr>";
                             }
                         } else {
-                            // Sesuaikan colspan dengan jumlah header (sekarang ada 9)
-                            echo "<tr><td colspan='9'>Belum ada data yang tersimpan.</td></tr>";
+                            echo "<tr><td colspan='5'>Belum ada data yang tersimpan.</td></tr>";
                         }
                         ?>
                     </tbody>
@@ -120,13 +80,14 @@ include 'koneksi.php';
 
     <script>
         function searchTable() {
-            var input, filter, table, tr, i;
+            var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
             table = document.getElementById("dataTable");
             tr = table.getElementsByTagName("tr");
 
-            for (i = 1; i < tr.length; i++) {
+            for (i = 1; i < tr.length; i++) { // Mulai dari 1 untuk skip header
+                // Mencari di kolom Instansi (index 1) dan Indikator (index 2)
                 let td_instansi = tr[i].getElementsByTagName("td")[1];
                 let td_indikator = tr[i].getElementsByTagName("td")[2];
                 if (td_instansi || td_indikator) {
