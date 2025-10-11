@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilih Domain Simulasi - BPS</title>
+    <title>Simulasi Penilaian EPSS - BPS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
     <header class="header">
         <div class="header-container">
             <div class="logo-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Logo_Badan_Pusat_Statistik_%28BPS%29_Indonesia.svg/2048px-Logo_Badan_Pusat_Statistik_%28BPS%29_Indonesia.svg.png" alt="Logo BPS">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Logo_Badan_Pusat_Statistik_%28BPS%_29_Indonesia.svg/2048px-Logo_Badan_Pusat_Statistik_%28BPS%29_Indonesia.svg.png" alt="Logo BPS">
             </div>
             <div class="brand-text">
                 <h1>Badan Pusat Statistik</h1>
@@ -20,29 +20,33 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="page-title">
-            <h2>Simulasi Penilaian EPSS</h2>
-            <p>Pilih domain yang ingin Anda simulasikan penilaiannya.</p>
-        </div>
+    <div class="simulation-layout">
+        
+        <nav class="side-navbar">
+            <h4>Pilih Menu</h4>
+            <a href="prinsip_sdi.php" class="nav-link active">Prinsip SDI</a>
+            <a href="kualitas_data.php" class="nav-link">Kualitas Data</a>
+            </nav>
 
-        <div class="simulation-selection-container">
-            
-            <a href="prinsip_sdi.php" class="simulation-card">
-                <div class="icon-placeholder">SDI</div>
-                <h3>Prinsip SDI</h3>
-                <p>Simulasi penilaian untuk domain Prinsip Satu Data Indonesia.</p>
-            </a>
+        <main class="main-content">
+        <div class="back-button-container">
+        <a href="index.php" class="back-button">&larr; Kembali ke Halaman Utama</a>
+    </div>
+            <div class="page-title">
+                <h2>Simulasi Penilaian EPSS</h2>
+            </div>
+            <div class="content-description">
+                <p>
+                    Selamat datang di halaman simulasi Evaluasi Penyelenggaraan Statistik Sektoral (EPSS).
+                    Fitur ini dirancang untuk memberikan gambaran kepada Tim Penilai Internal (TPI) mengenai proses penilaian dan cara kerja aplikasi.
+                </p>
+                <p>
+                    Silakan pilih domain penilaian pada menu navigasi di sebelah kiri untuk memulai simulasi pengisian Lembar Kerja Evaluasi (LKE).
+                </p>
+            </div>
+        </main>
 
-            <a href="#" class="simulation-card">
-                <div class="icon-placeholder">QD</div>
-                <h3>Kualitas Data</h3>
-                <p>Simulasi penilaian untuk domain Kualitas Data.</p>
-            </a>
-            
-        </div>
-        </div>
-
+    </div>
     <footer class="footer">
         <p>&copy; 2024 Badan Pusat Statistik. Hak Cipta Dilindungi.</p>
     </footer>
